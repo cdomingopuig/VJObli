@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: Camion
   m_EditorClassIdentifier: 
   name: Camion
-  icon: {fileID: 21300000, guid: 2295b7e2cced0f446a5678f923baa88b, type: 3}
+  icon: {fileID: 21300000, guid: 96a8ceaa7fdcb154ca98b3e4fb6da3b2, type: 3}

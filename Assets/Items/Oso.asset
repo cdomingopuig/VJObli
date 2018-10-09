@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: Oso
   m_EditorClassIdentifier: 
   name: Oso
-  icon: {fileID: 21300000, guid: 414a0a4e5c8ffe34b93f6baf417bf958, type: 3}
+  icon: {fileID: 21300000, guid: 36751dd023f4da543aff59792d10f089, type: 3}

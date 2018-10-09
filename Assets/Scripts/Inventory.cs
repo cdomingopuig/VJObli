@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour {
 
@@ -14,6 +15,20 @@ public class Inventory : MonoBehaviour {
             instance = this;
             DontDestroyOnLoad(this.gameObject);
             created = true;
+        }
+    }
+
+    void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "Mapa")
+        {
+            Canvas inventory = GetComponentInParent<Canvas>();
+            inventory.enabled = false;
+        }
+        else
+        {
+            Canvas inventory = GetComponentInParent<Canvas>();
+            inventory.enabled = true;
         }
     }
 

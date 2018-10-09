@@ -1,23 +1,36 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InventoryUI : MonoBehaviour {
 
     public GameObject inventoryUI;
     public Transform itemsParent;
+    private static bool created = false;
 
     Inventory inventory;
 
-	// Use this for initialization
-	void Start () {
-        inventory = Inventory.instance;
-        inventory.onItemChangedCallback += UpdateUI;
-        UpdateUI();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    void Awake()
+    {
+        if (!created)
+        {
+            DontDestroyOnLoad(this.gameObject);
+            inventory = Inventory.instance;
+            inventory.onItemChangedCallback += UpdateUI;
+            created = true;
+            UpdateUI();
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
+        
+    }
 
     public void UpdateUI()
     {
