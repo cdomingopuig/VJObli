@@ -59,8 +59,8 @@ public class PlayerScript : MonoBehaviour {
             }
             if (Mathf.Abs(targetPosition.x - transform.position.x) < 1.5)
             {
-                anim.SetInteger("state", 0);
                 rb.velocity = new Vector2(0, 0);
+                anim.SetInteger("state", 0);
                 moving = false;
             }
         }
