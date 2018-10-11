@@ -36,20 +36,30 @@ public class PlayerScript : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log("Click: " + targetPosition);
-            anim.SetInteger("state", 1);
-            if (targetPosition.x > transform.position.x)
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
+            if (hit && hit.collider.gameObject.name == "Ben" || anim.GetInteger("state")==4)
             {
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-                rb.velocity = new Vector2(speed.x * Time.deltaTime, 0f);
+                anim.SetInteger("state", 4);
+                return;
             }
             else
             {
-                transform.rotation = Quaternion.Euler(0, 180f, 0);
-                rb.velocity = new Vector2(-speed.x * Time.deltaTime, 0f);
+                targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Debug.Log("Click: " + targetPosition);
+                anim.SetInteger("state", 1);
+                if (targetPosition.x > transform.position.x)
+                {
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                    rb.velocity = new Vector2(speed.x * Time.deltaTime, 0f);
+                }
+                else
+                {
+                    transform.rotation = Quaternion.Euler(0, 180f, 0);
+                    rb.velocity = new Vector2(-speed.x * Time.deltaTime, 0f);
+                }
+                moving = true;
             }
-            moving = true;
         }
         if (moving)
         {

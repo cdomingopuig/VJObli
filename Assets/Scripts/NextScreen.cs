@@ -38,6 +38,14 @@ public class NextScreen : MonoBehaviour {
     {
         SceneManager.LoadScene("Plaza2");
     }
+    void GoToSquare3()
+    {
+        SceneManager.LoadScene("Plaza3");
+    }
+    void GoToSquare4()
+    {
+        SceneManager.LoadScene("Plaza4");
+    }
     void GoToMap()
     {
         SceneManager.LoadScene("Mapa");
@@ -66,6 +74,10 @@ public class NextScreen : MonoBehaviour {
                         GoToSquare1();
                     else if (SceneManager.GetActiveScene().name == "Plaza1")
                         GoToSquare2();
+                    else if (SceneManager.GetActiveScene().name == "Plaza2")
+                        GoToSquare3();
+                    else if (SceneManager.GetActiveScene().name == "Plaza3")
+                        GoToSquare4();
                 }
                 if (hit.collider.gameObject.name == "Prev")
                 {
@@ -79,6 +91,10 @@ public class NextScreen : MonoBehaviour {
                         GoToStore2();
                     else if (SceneManager.GetActiveScene().name == "Plaza2")
                         GoToSquare1();
+                    else if (SceneManager.GetActiveScene().name == "Plaza3")
+                        GoToSquare2();
+                    else if (SceneManager.GetActiveScene().name == "Plaza4")
+                        GoToSquare3();
                 }
                 if (hit.collider.gameObject.name == "map icon")
                 {

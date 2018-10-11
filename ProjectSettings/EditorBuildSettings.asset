@@ -27,6 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Plaza2.unity
     guid: effd71e0f58df35409a8b26dfe4c0db9
   - enabled: 1
+    path: Assets/Scenes/Plaza3.unity
+    guid: bef1d68c55a3415468e930a53a0cbf99
+  - enabled: 1
+    path: Assets/Scenes/Plaza4.unity
+    guid: 018077c141f44a34a83a4201ffc2b018
+  - enabled: 1
     path: Assets/Scenes/Mapa.unity
     guid: 6c34307d06a44ed4b9257882e8e0b702
   m_configObjects: {}
